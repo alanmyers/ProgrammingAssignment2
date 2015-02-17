@@ -1,0 +1,7 @@
+v <- (10,2,35,34,33,33,31)
+mv <- makeVector(v)
+> cachemean(mv)
+[1] 25.42857
+> cachemean(mv)
+getting cached data
+[1] 25.42857

@@ -1,0 +1,17 @@
+{
+    "contents" : "v <- (10,2,35,34,33,33,31)\nmv <- makeVector(v)\n> cachemean(mv)\n[1] 25.42857\n> cachemean(mv)\ngetting cached data\n[1] 25.42857",
+    "created" : 1424126615448.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4265784632",
+    "id" : "B7DA85AC",
+    "lastKnownWriteTime" : 1424126672,
+    "path" : "~/Coursera/R_Programming/ProgrammingAssignment2/HowToRun.txt",
+    "project_path" : "HowToRun.txt",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}
