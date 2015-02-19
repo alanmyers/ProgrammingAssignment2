@@ -1,0 +1,16 @@
+{
+    "contents" : "makeVector <- function(x = numeric()) {\n  m <- NULL\n  set <- function(y) {\n    x <<- y\n    m <<- NULL\n  }\n  get <- function() x\n  setmean <- function(mean) m <<- mean\n  getmean <- function() m\n  list(set = set, get = get,\n       setmean = setmean,\n       getmean = getmean)\n}",
+    "created" : 1424210680477.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "698229556",
+    "id" : "A89ED219",
+    "lastKnownWriteTime" : 1424212714,
+    "path" : "~/Coursera/R_Programming/ProgrammingAssignment2/ProgrammingAssignment2/makeVector.R",
+    "project_path" : "makeVector.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

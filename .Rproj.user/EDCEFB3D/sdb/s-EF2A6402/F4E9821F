@@ -1,0 +1,16 @@
+{
+    "contents" : "## \n## makeChacheMatrix - Saves matrixData and invertedMatrix data to private\n## variables.  Usage:\n## Creation\n##   mat = matrix(1:4,2,2)\n##   mm = makeCacheMatrix(mat)\n##  Methods\n##   mm$get() - Returns the matrix either defined in creation or by $set()\n##   mm$getInvertedMatrix() - Returns the invertedMatrix variable that is defined in set()\n##   mm$set(matrix)\n##   mm$setInvertedMarix(solve(matrix)) - Stores the results of the solve() function.\n##\n\n## Write a short comment describing this function\n\nmakeCacheMatrix <- function(matrixData = matrix()) {\n  #\n  # Initialize internal variables.  Needed in case\n  # the variable is accessed before the setInvertedMatrix function is called\n  #\n  invertedMatrix  <- NULL \n  \n  #\n  # set():  storesmatrixData and null to invertedMatrix.  \n  #\n  set <- function(inMat) {\n    matrixData <<- inMat\n    invertedMatrix <<- NULL\n  }\n  \n  # Get - Return MatrixData\n  get <- function() { \n    #return it\n    matrixData \n  }\n      \n  \n  #\n  # insevertedMatrix receives results of solve()\n  #\n  setInvertedMatrix <- function(inMat) {\n    invertedMatrix  <<- inMat\n  }\n    \n  #\n  # REturns the invertedMatrix variable.\n  #\n  getInvertedMatrix <- function() invertedMatrix\n  \n  list(set = set, get = get,\n       setInvertedMatrix = setInvertedMatrix,\n       getInvertedMatrix = getInvertedMatrix)\n\n}\n\n\n## cacheSolve() - function that will either 1) Calculate and return an \n##                inverted matrix if not previously solved.  Or return \n##                a previously solved matrix (without solving)\n## Parameters:\n##   cacheSolve(mcm) where  mcm= a previously created makeCacheMatrix object.\n##  Usage:\n##  mat = matrix(1:4,2,2)\n##   mm = makeCacheMatrix(mat)\n##  cacheSolve(mm)\n##    -> New inverted matrix created and returned\n##  cacheSolve(mm)\n##    -> 2nd time:  Inverted Matrix returned from memory (not solved again)\n##  \n\ncacheSolve <- function(mcm, ...) {\n  # get the inverted matrix from the makeCacheMatrix object.  This \n  # returns null if not previously defined.\n  mat <- mcm$getInvertedMatrix()         \n  #\n  # solve() has been previously defined.  Just return what is in memory.\n  #\n  if(!is.null(mat)) {\n    message(\"getting cached data\")\n    return(mat)\n  }\n  else {\n    #\n    # solve() to get inverted matrix.  And Store results.\n    #\n    message(\"SOlving and storing results in cache memory\")\n    data <- mcm$get()\n    mat <- solve(data, ...)\n    mcm$setInvertedMatrix(mat)\n    return(mat)  \n  }\n  \n}\n",
+    "created" : 1424210613355.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2913394078",
+    "id" : "F4E9821F",
+    "lastKnownWriteTime" : 1424378048,
+    "path" : "~/Coursera/R_Programming/ProgrammingAssignment2/ProgrammingAssignment2/cachematrix.R",
+    "project_path" : "cachematrix.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
